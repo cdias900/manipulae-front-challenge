@@ -1,13 +1,14 @@
-import { FC, useState, MutableRefObject } from 'react';
+import { FC, useState, useRef } from 'react';
 import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai';
 
 import { Backdrop, Container } from './styles';
 
 interface AudioControlsProps {
-  audioRef: MutableRefObject<HTMLAudioElement>
+  src: string;
 }
 
-const AudioControls: FC<AudioControlsProps> = ({ audioRef }) => {
+const AudioControls: FC<AudioControlsProps> = ({ src }) => {
+  const audioRef = useRef<HTMLAudioElement>();
   const [playing, setPlaying] = useState(false);
 
   const handlePlay = () => {
@@ -22,6 +23,7 @@ const AudioControls: FC<AudioControlsProps> = ({ audioRef }) => {
 
   return (
     <Container playing={playing}>
+      <audio ref={audioRef} src={src} />
       <Backdrop />
       {!playing && <AiFillPlayCircle size={80} color="#fff" onClick={handlePlay} />}
       {playing && <AiFillPauseCircle size={80} color="#fff" onClick={handlePause} />}

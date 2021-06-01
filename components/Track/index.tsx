@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 import { getTrackDurationString } from '../../utils/utils';
 import CoverImg from '../CoverImg';
@@ -46,9 +47,14 @@ export interface TrackData {
 
 interface TrackProps {
   trackData: TrackData;
+  addFavorite: () => void;
+  removeFavorite: () => void;
+  isFavorite?: boolean;
 }
 
-const Track: FC<TrackProps> = ({ trackData }) => (
+const Track: FC<TrackProps> = ({
+  trackData, addFavorite, removeFavorite, isFavorite,
+}) => (
   <Container>
     <CoverImg
       img={trackData.album.cover}
@@ -60,6 +66,8 @@ const Track: FC<TrackProps> = ({ trackData }) => (
       <Artist>{trackData.artist.name}</Artist>
       <p>{getTrackDurationString(trackData.duration)}</p>
       <p><a href={trackData.link} target="_blank" rel="noreferrer">Abrir no Deezer</a></p>
+      {!isFavorite && <AiOutlineStar size={24} color="#ddda0f" onClick={addFavorite} />}
+      {isFavorite && <AiFillStar size={24} color="#ddda0f" onClick={removeFavorite} />}
     </InfoContainer>
   </Container>
 );

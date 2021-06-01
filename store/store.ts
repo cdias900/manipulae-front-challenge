@@ -1,4 +1,6 @@
-import { applyMiddleware, createStore, compose } from 'redux';
+import {
+  applyMiddleware, createStore, compose,
+} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { createWrapper } from 'next-redux-wrapper';
 
@@ -15,7 +17,28 @@ const bindMiddleware = (middleware: any[]) => {
 // eslint-disable-next-line no-unused-vars
 export const makeStore = (context) => {
   const sagaMiddleware = createSagaMiddleware();
-  const store = createStore(rootReducer, bindMiddleware([sagaMiddleware]));
+  let store;
+  if (typeof window !== 'undefined') {
+    const { persistReducer, persistStore } = require('redux-persist');
+    const storage = require('redux-persist/lib/storage').default;
+
+    const persistConfig = {
+      key: 'root',
+      storage,
+    };
+
+    store = createStore(
+      persistReducer(persistConfig, rootReducer),
+      bindMiddleware([sagaMiddleware]),
+    );
+
+    store.__persistor = persistStore(store);
+  } else {
+    store = createStore(
+      rootReducer,
+      bindMiddleware([sagaMiddleware]),
+    );
+  }
 
   (store as any).sagaTask = sagaMiddleware.run(rootSaga);
 

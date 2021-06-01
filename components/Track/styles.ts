@@ -9,9 +9,17 @@ export const Container = styled.div`
 `;
 
 export const InfoContainer = styled.div`
+  position: relative;
   padding: 0 16px;
   width: 350px;
   height: 100%;
+
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
 `;
 
 export const Title = styled.p`

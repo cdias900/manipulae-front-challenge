@@ -36,7 +36,10 @@
     "no-console": "off",
     "no-alert": "off",
     "camelcase": "off",
-    "jsx-a11y/media-has-caption": "off"
+    "jsx-a11y/media-has-caption": "off",
+    "consistent-return": "off",
+    "no-underscore-dangle": "off",
+    "global-require": "off"
   },
   "settings": {
     "import/resolver": {
