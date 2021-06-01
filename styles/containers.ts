@@ -17,3 +17,11 @@ export const TrackList = styled.div`
   align-items: center;
   justify-content: flex-start;
 `;
+
+export const ButtonsContainer = styled.div`
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 16px;
+`;

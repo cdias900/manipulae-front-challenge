@@ -11,9 +11,9 @@ export const Container = styled.div`
   justify-content: space-around;
   height: 120px;
   border-radius: 3px;
-  -webkit-box-shadow: 0px 5px 10px -2px #CCCCCC;
-  box-shadow: 0px 5px 10px -2px #CCCCCC;
-  background-color: #FAFAFA;
+  -webkit-box-shadow: 0px 5px 10px -2px #ccc;
+  box-shadow: 0px 5px 10px -2px #ccc;
+  background-color: #fafafa;
 `;
 
 export const InfoContainer = styled.div`

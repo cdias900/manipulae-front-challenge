@@ -74,8 +74,8 @@ const Track: FC<TrackProps> = ({
       <a href={trackData.link} target="_blank" rel="noreferrer">
         <ExternalLink size={24} color="#000" />
       </a>
-      {!isFavorite && <NotFavoriteIcon size={24} color="#EAB543" onClick={addFavorite} />}
       {isFavorite && <FavoriteIcon size={24} color="#EAB543" onClick={removeFavorite} />}
+      {!isFavorite && <NotFavoriteIcon size={24} color="#EAB543" onClick={addFavorite} />}
     </InfoContainer>
   </Container>
 );

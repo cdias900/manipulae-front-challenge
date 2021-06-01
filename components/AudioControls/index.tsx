@@ -25,8 +25,8 @@ const AudioControls: FC<AudioControlsProps> = ({ src }) => {
     <Container playing={playing}>
       <audio ref={audioRef} src={src} />
       <Backdrop />
-      {!playing && <AiFillPlayCircle size={80} color="#fff" onClick={handlePlay} />}
       {playing && <AiFillPauseCircle size={80} color="#fff" onClick={handlePause} />}
+      {!playing && <AiFillPlayCircle size={80} color="#fff" onClick={handlePlay} />}
     </Container>
   );
 };
