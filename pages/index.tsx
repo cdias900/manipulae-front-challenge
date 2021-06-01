@@ -31,10 +31,10 @@ const Home: FC<HomeProps> = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       if (search === '') router.replace('/');
-      else {
+      else if (search === searchQuery) {
         const i = index ? `&index=${index}` : '';
         router.replace(`/?search=${search}${i}`);
-      }
+      } else router.replace(`/?search=${search}`);
     }, 50);
 
     return () => clearTimeout(timer);
