@@ -6,6 +6,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   padding-top: 20px;
+  margin-top: 70px;
 `;
 
 export const TrackList = styled.div`

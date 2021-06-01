@@ -26,7 +26,7 @@ const Home: FC<HomeProps> = ({ tracks, searchQuery }) => {
     const timer = setTimeout(() => {
       if (search === '') router.replace('/');
       else router.replace(`/?search=${search}`);
-    }, 500);
+    }, 50);
 
     return () => clearTimeout(timer);
   }, [search]);
@@ -44,7 +44,7 @@ const Home: FC<HomeProps> = ({ tracks, searchQuery }) => {
       )}
       <Container>
         <TextInput
-          placeholder="Música, artista, album..."
+          placeholder="Música, artista, álbum..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           clear={() => setSearch('')}

@@ -15,8 +15,8 @@ const TextInput: FC<TextInputProps> = ({
 }) => (
   <Container>
     <Input value={value} onChange={onChange} placeholder={placeholder} />
-    {value === '' && <AiOutlineSearch size={32} color="#000" />}
-    {value !== '' && <AiOutlineClose size={32} color="#000" onClick={clear} />}
+    {value === '' && <AiOutlineSearch size={32} color="#ccc" />}
+    {value !== '' && <AiOutlineClose size={32} color="#ccc" onClick={clear} />}
   </Container>
 );
 

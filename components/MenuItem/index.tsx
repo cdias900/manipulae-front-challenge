@@ -1,11 +1,17 @@
 import { FC } from 'react';
+import Link from 'next/link';
 
-import { Container } from './styles';
+import { MenuLink } from './styles';
 
-const MenuItem: FC = () => (
-  <Container>
-    a
-  </Container>
+interface MenuItemProps {
+  to: string;
+  label: string;
+}
+
+const MenuItem: FC<MenuItemProps> = ({ to, label }) => (
+  <Link href={to} passHref>
+    <MenuLink>{label}</MenuLink>
+  </Link>
 );
 
 export default MenuItem;

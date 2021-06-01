@@ -1,10 +1,13 @@
 import { FC } from 'react';
 
+import MenuItem from '../MenuItem';
+
 import { Container } from './styles';
 
 const Menu: FC = () => (
   <Container>
-    Menu
+    <MenuItem to="/" label="Página Inicial" />
+    <MenuItem to="/favorites" label="Favoritos" />
   </Container>
 );
 

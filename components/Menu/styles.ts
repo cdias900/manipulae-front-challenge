@@ -2,6 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: absolute;
-  height: 120px;
-  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 70px;
+  width: 100%;
+  z-index: 1000;
+  margin-top: -70px;
+  border-bottom: 1px solid #ccc;
 `;

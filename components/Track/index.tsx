@@ -1,11 +1,17 @@
 import { FC } from 'react';
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 import { getTrackDurationString } from '../../utils/utils';
 import CoverImg from '../CoverImg';
 
 import {
-  Container, Title, Artist, InfoContainer,
+  Container,
+  Title,
+  Artist,
+  InfoContainer,
+  Duration,
+  ExternalLink,
+  FavoriteIcon,
+  NotFavoriteIcon,
 } from './styles';
 
 interface AlbumData {
@@ -64,10 +70,12 @@ const Track: FC<TrackProps> = ({
     <InfoContainer>
       <Title>{trackData.title}</Title>
       <Artist>{trackData.artist.name}</Artist>
-      <p>{getTrackDurationString(trackData.duration)}</p>
-      <p><a href={trackData.link} target="_blank" rel="noreferrer">Abrir no Deezer</a></p>
-      {!isFavorite && <AiOutlineStar size={24} color="#ddda0f" onClick={addFavorite} />}
-      {isFavorite && <AiFillStar size={24} color="#ddda0f" onClick={removeFavorite} />}
+      <Duration>{getTrackDurationString(trackData.duration)}</Duration>
+      <a href={trackData.link} target="_blank" rel="noreferrer">
+        <ExternalLink size={24} color="#000" />
+      </a>
+      {!isFavorite && <NotFavoriteIcon size={24} color="#EAB543" onClick={addFavorite} />}
+      {isFavorite && <FavoriteIcon size={24} color="#EAB543" onClick={removeFavorite} />}
     </InfoContainer>
   </Container>
 );
