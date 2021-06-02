@@ -65,10 +65,6 @@ export const Title = styled.p`
   @media (max-width: 750px) {
     font-size: 15px;
   }
-
-  @media (max-width: 500px) {
-    font-size: 14px;
-  }
 `;
 
 export const Artist = styled.p`
@@ -77,10 +73,6 @@ export const Artist = styled.p`
 
   @media (max-width: 750px) {
     font-size: 12px;
-  }
-
-  @media (max-width: 500px) {
-    font-size: 11px;
   }
 `;
 
@@ -93,9 +85,5 @@ export const Duration = styled.p`
 
   @media (max-width: 750px) {
     font-size: 12px;
-  }
-
-  @media (max-width: 500px) {
-    font-size: 11px;
   }
 `;
