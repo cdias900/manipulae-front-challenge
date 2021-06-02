@@ -12,4 +12,12 @@ export const MenuLink = styled.a`
   :hover {
     color: red;
   }
+
+  @media (max-width: 750px) {
+    min-width: 150px;
+  }
+
+  @media (max-width: 500px) {
+    min-width: 100px;
+  }
 `;

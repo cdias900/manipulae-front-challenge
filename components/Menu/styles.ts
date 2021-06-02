@@ -10,4 +10,12 @@ export const Container = styled.div`
   z-index: 1000;
   margin-top: -70px;
   border-bottom: 1px solid #ccc;
+
+  @media (max-width: 750px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 500px) {
+    justify-content: space-around;
+  }
 `;

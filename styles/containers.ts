@@ -19,9 +19,17 @@ export const TrackList = styled.div`
 `;
 
 export const ButtonsContainer = styled.div`
-  width: 60%;
+  width: 500px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding-bottom: 16px;
+
+  @media (max-width: 750px) {
+    width: 400px;
+  }
+
+  @media (max-width: 500px) {
+    width: 300px;
+  }
 `;

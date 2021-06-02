@@ -21,4 +21,12 @@ export const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 3px;
   font-size: 16px;
+
+  @media (max-width: 750px) {
+    width: 300px;
+  }
+
+  @media (max-width: 500px) {
+    width: 250px;
+  }
 `;

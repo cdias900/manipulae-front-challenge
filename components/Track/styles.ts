@@ -27,6 +27,14 @@ export const InfoContainer = styled.div`
       opacity: 1;
     }
   }
+
+  @media (max-width: 750px) {
+    width: 300px;
+  }
+
+  @media (max-width: 500px) {
+    width: 200px;
+  }
 `;
 
 export const FavoriteIcon = styled(AiFillStar)`
@@ -53,11 +61,27 @@ export const ExternalLink = styled(FiExternalLink)`
 export const Title = styled.p`
   font-size: 16px;
   margin: 2px 4px;
+
+  @media (max-width: 750px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 14px;
+  }
 `;
 
 export const Artist = styled.p`
   font-size: 13px;
   margin: 2px 4px;
+
+  @media (max-width: 750px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 11px;
+  }
 `;
 
 export const Duration = styled.p`
@@ -66,4 +90,12 @@ export const Duration = styled.p`
   right: 0;
   font-size: 13px;
   margin: 2px 4px;
+
+  @media (max-width: 750px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 11px;
+  }
 `;
