@@ -1,7 +1,8 @@
 import { FC } from 'react';
+import Image from 'next/image';
 
 import AudioControls from '../AudioControls';
-import { Container, Img } from './styles';
+import { Container } from './styles';
 
 interface CoverImgProps {
   img: string;
@@ -11,7 +12,7 @@ interface CoverImgProps {
 
 const CoverImg: FC<CoverImgProps> = ({ img, alt, preview }) => (
   <Container>
-    <Img src={img} alt={alt} />
+    <Image src={img} alt={alt} width={120} height={120} />
     <AudioControls src={preview} />
   </Container>
 );
